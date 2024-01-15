@@ -1,6 +1,5 @@
 .next
 node_modules
-build
 coverage
 package.json
 package-lock.json
