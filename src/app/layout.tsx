@@ -1,13 +1,17 @@
-// src/app/layout.tsx
+'use client';
+
 import GlobalStyles from '@/styles/GlobalStyles';
+import StyledComponentsRegistry from '@/lib/registry';
 import { ReactNode } from 'react';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <GlobalStyles />
-        {children}
+        <StyledComponentsRegistry>
+          <GlobalStyles />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
