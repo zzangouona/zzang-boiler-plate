@@ -17,7 +17,7 @@
     "airbnb",
     "airbnb/hooks",
     "airbnb-typescript/base",
-    "airbnb-typescript"
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -27,7 +27,7 @@
     },
     "project": ["./tsconfig.json"]
   },
-
   "rules": {
+    "react/react-in-jsx-scope": "off"
   }
 }

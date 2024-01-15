@@ -1,27 +1,40 @@
 {
+  "include": ["src","types","next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"], // node_modules 폴더 제외
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "es5",  // ECMAScript 5 버전으로 컴파일
+    "lib": ["dom", "dom.iterable", "esnext"],  // 사용할 라이브러리 선언
+    // Next.js 설정
+    "allowJs": true,  // JavaScript 파일 처리 허용
+    "skipLibCheck": true,  // 타입 선언 파일 체크 생략
+    "strict": true,  // 엄격한 타입 체킹 활성화
+    "noEmit": true,  // 컴파일 결과물 출력 안 함
+    "esModuleInterop": true,  // ES6 모듈 상호운용성 활성화
+    "module": "esnext",  // 최신 ES 모듈 기능 사용
+    "resolveJsonModule": true,  // JSON 모듈 가져오기 허용
+    "isolatedModules": true,  // 파일별 독립 모듈로 처리
+    "jsx": "preserve",  // JSX 코드 그대로 보존
+    "incremental": true,  // 증분 컴파일 활성화
+    // React 설정
+    "composite": false,  // 복합 프로젝트 설정 비활성화
+    "inlineSources": false,  // 소스코드를 소스맵에 내장하지 않음
+    "moduleResolution": "node",  // Node.js 스타일의 모듈 해석 사용
+    "preserveWatchOutput": true,  // watch 모드 출력 유지
+    "noImplicitAny": false,  // any 타입 자동 할당 허용
+    "declaration": true,  // 타입 선언 파일 생성
+    "declarationMap": true,  // 선언 파일의 소스 맵 생성
+    "sourceMap": true,  // 소스 맵 생성
+    "forceConsistentCasingInFileNames": true,  // 파일명 대소문자 일관성 강제
+    "noUnusedLocals": true,  // 사용되지 않는 로컬 변수 오류 처리
+    "noUnusedParameters": true,  // 사용되지 않는 매개변수 오류 처리
+    "noImplicitReturns": true,  // 모든 함수의 명시적 반환 타입 요구
+    "noFallthroughCasesInSwitch": true,  // switch 문의 case 누락 방지
+    "baseUrl": ".",  // 모듈 해석을 위한 기본 디렉토리
+    "paths": { "@/*": ["./src/*"] },  // 경로 별칭
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Next.js 플러그인 사용
       }
     ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
 }
