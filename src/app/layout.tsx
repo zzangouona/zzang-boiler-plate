@@ -3,10 +3,15 @@
 import GlobalStyles from '@/styles/GlobalStyles';
 import StyledComponentsRegistry from '@/lib/registry';
 import { ReactNode } from 'react';
+import localFont from 'next/font/local';
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+const Pretendard = localFont({
+  src: '../../public/assets/fonts/PretendardVariable.woff2',
+});
+
+function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={Pretendard.className}>
       <body>
         <StyledComponentsRegistry>
           <GlobalStyles />
@@ -16,3 +21,4 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     </html>
   );
 }
+export default RootLayout;

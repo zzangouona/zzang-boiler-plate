@@ -14,6 +14,7 @@ function Home() {
   return (
     <div css={styles.container({ hasBackground: true })}>
       <Logo />
+      <h1>테스트</h1>
     </div>
   );
 }

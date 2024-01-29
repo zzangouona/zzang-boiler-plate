@@ -3,9 +3,11 @@
 import { createGlobalStyle } from 'styled-components';
 import { GlobalStyles as BaseStyles } from 'twin.macro';
 
-const CustomStyles = createGlobalStyle({
-  body: {},
-});
+const CustomStyles = createGlobalStyle`
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+`;
 
 function GlobalStyles() {
   return (
